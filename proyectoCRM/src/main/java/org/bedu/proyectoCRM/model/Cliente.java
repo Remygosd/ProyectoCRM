@@ -1,15 +1,20 @@
 package org.bedu.proyectoCRM.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import javax.persistence.Column;
 import javax.validation.constraints.*;
 
 @Data
+@Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
+
 public class Cliente {
+    
     @PositiveOrZero(message = "El identificador no puede ser un número negativo")
     private long id;
 
@@ -24,6 +29,7 @@ public class Cliente {
     @Max(value = 10000, message = "Los clientes con más de 10000 empleados no son válidos")
     private String numeroEmpleados;
 
+    @Column(nullable = false, length = 35)
     @NotBlank(message = "Se debe proporcionar una dirección")
     private String direccion;
 }
