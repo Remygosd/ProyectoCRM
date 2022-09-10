@@ -1,7 +1,6 @@
 package org.bedu.proyectoCRM.controller;
 
 import org.bedu.proyectoCRM.model.Etapa;
-import org.bedu.proyectoCRM.model.Producto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
