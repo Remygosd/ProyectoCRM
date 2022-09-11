@@ -1,0 +1,134 @@
+= CRM Bedu
+Bedu ORG <contacto@bedu.org> 1.0.0;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:sectnums:
+
+[[resumen]]
+= Resumen
+Este curso muestra el desarrollo de un API usando Spring Framework, con sus módulos Spring Boot, Spring Data JPA y Spring REST Docs.
+
+
+[[verbos-http]]
+== Verbos HTTP
+
+Este curso trate de adherirse lo más posible al estándar RESTful aprovechando las capacidades del protocolo de HTTP
+y siguiendo las convenciones HTTP en su uso de los verbos HTTP.
+
+|===
+| Verbo | Uso
+
+| `GET`
+| Recuperar un recurso
+
+| `POST`
+| Crea un nuevo recurso
+
+| `PUT`
+| Actualizar un recurso existente, incluyendo actualizaciones parciales
+
+| `DELETE`
+| Eliminar un recurso existente
+|===
+
+Este curso trate de adherirse lo más posible al estándar RESTful en el uso de los códigos de estátus HTTP.
+
+|===
+| Code | uso
+
+| `200 OK`
+| La petición se completó exitosamente
+
+| `201 Created`
+| Se creó un nuevo recurso. La URL del reurso está disponible en la cabecera `Location` de la respuesta
+
+| `204 No Content`
+| Se aplicó correctamente la actualización de un recurso
+
+| `400 Bad Request`
+| La petición está formada de forma incorrecta. El cuerpo de la respuesta incluirá el error, proporcionando más información
+
+| `404 Not Found`
+| El recurso especificado no existe
+|===
+
+
+[[etapas]]
+== Etapas
+
+=== Get etapa por Id
+Obtiene un etapa específica usando su identificador único.
+
+==== Ejemplo de petición
+include::{snippets}/etapa/get-etapa/http-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/etapa/get-etapa/http-response.adoc[]
+
+==== Ejemplo usando CURL
+include::{snippets}/etapa/get-etapa/curl-request.adoc[]
+
+==== Parámetros de la petición
+include::{snippets}/etapa/get-etapa/path-parameters.adoc[]
+
+
+=== Get etapas
+Obtiene todas las etapas.
+
+==== Ejemplo de petición
+include::{snippets}/etapa/get-etapas/http-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/etapa/get-etapas/http-response.adoc[]
+
+==== Ejemplo usando CURL
+include::{snippets}/etapa/get-etapas/curl-request.adoc[]
+
+
+=== POST nueva etapa
+Crea una nueva etapa
+
+==== Ejemplo de petición
+include::{snippets}/etapa/post-etapa/http-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/etapa/post-etapa/http-response.adoc[]
+
+==== Ejemplo usando CURL
+include::{snippets}/etapa/post-etapa/curl-request.adoc[]
+
+
+=== PUT  etapa
+Actualiza un etapa existente.
+
+==== Ejemplo de petición
+include::{snippets}/etapa/put-etapa/http-request.adoc[]
+
+==== Parámetros de la petición
+include::{snippets}/etapa/put-etapa/path-parameters.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/etapa/put-etapa/http-response.adoc[]
+
+==== Ejemplo usando CURL
+include::{snippets}/etapa/put-etapa/curl-request.adoc[]
+
+
+=== DELETE etapa por Id
+Elimina una etapa específica usando su identificador único.
+
+==== Ejemplo de petición
+include::{snippets}/etapa/delete-etapa/http-request.adoc[]
+
+==== Ejemplo de respuesta
+include::{snippets}/etapa/delete-etapa/http-response.adoc[]
+
+==== Parámetros de la petición
+include::{snippets}/etapa/delete-etapa/path-parameters.adoc[]
+
+==== Ejemplo usando CURL
+include::{snippets}/etapa/delete-etapa/curl-request.adoc[]
