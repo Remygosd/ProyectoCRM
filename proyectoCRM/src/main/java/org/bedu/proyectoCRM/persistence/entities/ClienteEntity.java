@@ -1,4 +1,4 @@
-package org.bedu.proyectoCRM.persistence.entity;
+package org.bedu.proyectoCRM.persistence.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 public class ClienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false, length = 30)
     private String nombre;

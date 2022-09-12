@@ -1,18 +1,22 @@
 package org.bedu.proyectoCRM.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.validation.constraints.*;
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 
 @Data
+@Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
+
 public class Producto {
     @PositiveOrZero(message = "El identificador del producto no puede ser un número negativo")
-    private long id;
+    private Long id;
 
     @NotEmpty(message = "El nombre del producto no puede estar en blanco.")
     @Size(min = 4, max = 30, message = "El nombre del producto debe tener entre 4 y 30 letras.")
@@ -28,5 +32,5 @@ public class Producto {
     private String numeroRegistro;
 
     @PastOrPresent(message = "La fecha de creación del producto no puede ocurrir en el futuro.")
-    private LocalDate fechaCreacion;
+    private LocalDateTime fechaCreacion;
 }

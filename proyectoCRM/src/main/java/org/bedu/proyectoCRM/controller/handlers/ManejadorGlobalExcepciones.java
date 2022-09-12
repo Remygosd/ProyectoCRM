@@ -5,7 +5,7 @@ package org.bedu.proyectoCRM.controller.handlers;
 import java.util.Map;
 import java.util.TreeMap;
 
-import org.bedu.proyectoCRM.model.builders.RespuestaError;
+import org.bedu.proyectoCRM.model.RespuestaError;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
