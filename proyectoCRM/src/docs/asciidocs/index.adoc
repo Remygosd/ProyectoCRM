@@ -7,128 +7,275 @@ Bedu ORG <contacto@bedu.org> 1.0.0;
 :toclevels: 4
 :sectlinks:
 :sectnums:
-
 [[resumen]]
 = Resumen
 Este curso muestra el desarrollo de un API usando Spring Framework, con sus módulos Spring Boot, Spring Data JPA y Spring REST Docs.
-
-
 [[verbos-http]]
 == Verbos HTTP
-
 Este curso trate de adherirse lo más posible al estándar RESTful aprovechando las capacidades del protocolo de HTTP
 y siguiendo las convenciones HTTP en su uso de los verbos HTTP.
-
 |===
 | Verbo | Uso
-
 | `GET`
 | Recuperar un recurso
-
 | `POST`
 | Crea un nuevo recurso
-
 | `PUT`
 | Actualizar un recurso existente, incluyendo actualizaciones parciales
-
 | `DELETE`
 | Eliminar un recurso existente
 |===
-
 Este curso trate de adherirse lo más posible al estándar RESTful en el uso de los códigos de estátus HTTP.
-
 |===
 | Code | uso
-
 | `200 OK`
 | La petición se completó exitosamente
-
 | `201 Created`
 | Se creó un nuevo recurso. La URL del reurso está disponible en la cabecera `Location` de la respuesta
-
 | `204 No Content`
 | Se aplicó correctamente la actualización de un recurso
-
 | `400 Bad Request`
 | La petición está formada de forma incorrecta. El cuerpo de la respuesta incluirá el error, proporcionando más información
-
 | `404 Not Found`
 | El recurso especificado no existe
 |===
-
-
 [[etapas]]
 == Etapas
-
 === Get etapa por Id
 Obtiene un etapa específica usando su identificador único.
-
 ==== Ejemplo de petición
 include::{snippets}/etapa/get-etapa/http-request.adoc[]
-
 ==== Ejemplo de respuesta
 include::{snippets}/etapa/get-etapa/http-response.adoc[]
-
 ==== Ejemplo usando CURL
 include::{snippets}/etapa/get-etapa/curl-request.adoc[]
-
 ==== Parámetros de la petición
 include::{snippets}/etapa/get-etapa/path-parameters.adoc[]
-
-
 === Get etapas
 Obtiene todas las etapas.
-
 ==== Ejemplo de petición
 include::{snippets}/etapa/get-etapas/http-request.adoc[]
-
 ==== Ejemplo de respuesta
 include::{snippets}/etapa/get-etapas/http-response.adoc[]
-
 ==== Ejemplo usando CURL
 include::{snippets}/etapa/get-etapas/curl-request.adoc[]
-
-
 === POST nueva etapa
 Crea una nueva etapa
-
 ==== Ejemplo de petición
 include::{snippets}/etapa/post-etapa/http-request.adoc[]
-
 ==== Ejemplo de respuesta
 include::{snippets}/etapa/post-etapa/http-response.adoc[]
-
 ==== Ejemplo usando CURL
 include::{snippets}/etapa/post-etapa/curl-request.adoc[]
-
-
 === PUT  etapa
 Actualiza un etapa existente.
-
 ==== Ejemplo de petición
 include::{snippets}/etapa/put-etapa/http-request.adoc[]
-
 ==== Parámetros de la petición
 include::{snippets}/etapa/put-etapa/path-parameters.adoc[]
-
 ==== Ejemplo de respuesta
 include::{snippets}/etapa/put-etapa/http-response.adoc[]
-
 ==== Ejemplo usando CURL
 include::{snippets}/etapa/put-etapa/curl-request.adoc[]
-
-
 === DELETE etapa por Id
 Elimina una etapa específica usando su identificador único.
-
 ==== Ejemplo de petición
 include::{snippets}/etapa/delete-etapa/http-request.adoc[]
-
 ==== Ejemplo de respuesta
 include::{snippets}/etapa/delete-etapa/http-response.adoc[]
-
 ==== Parámetros de la petición
 include::{snippets}/etapa/delete-etapa/path-parameters.adoc[]
-
 ==== Ejemplo usando CURL
 include::{snippets}/etapa/delete-etapa/curl-request.adoc[]
+[[clientes]]
+== Clientes
+=== Get cliente por Id
+Obtiene un cliente específico usando su identificador único.
+==== Ejemplo de petición
+include::{snippets}/cliente/get-cliente/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/cliente/get-cliente/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/cliente/get-cliente/curl-request.adoc[]
+==== Parámetros de la petición
+include::{snippets}/cliente/get-cliente/path-parameters.adoc[]
+=== Get clientes
+Obtiene todas las clientes.
+==== Ejemplo de petición
+include::{snippets}/cliente/get-clientes/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/cliente/get-clientes/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/cliente/get-clientes/curl-request.adoc[]
+=== POST nuevo cliente
+Crea un nuevo cliente
+==== Ejemplo de petición
+include::{snippets}/cliente/post-cliente/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/cliente/post-cliente/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/cliente/post-cliente/curl-request.adoc[]
+=== PUT  cliente
+Actualiza un etapa existente.
+==== Ejemplo de petición
+include::{snippets}/cliente/put-cliente/http-request.adoc[]
+==== Parámetros de la petición
+include::{snippets}/cliente/put-cliente/path-parameters.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/cliente/put-cliente/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/cliente/put-cliente/curl-request.adoc[]
+=== DELETE cliente por Id
+Elimina una etapa específica usando su identificador único.
+==== Ejemplo de petición
+include::{snippets}/cliente/delete-cliente/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/cliente/delete-cliente/http-response.adoc[]
+==== Parámetros de la petición
+include::{snippets}/cliente/delete-cliente/path-parameters.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/cliente/delete-cliente/curl-request.adoc[]
+[[productos]]
+== Productos
+=== Get producto por Id
+Obtiene un producto específico usando su identificador único.
+==== Ejemplo de petición
+include::{snippets}/producto/get-producto/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/producto/get-producto/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/producto/get-producto/curl-request.adoc[]
+==== Parámetros de la petición
+include::{snippets}/producto/get-producto/path-parameters.adoc[]
+=== Get productos
+Obtiene todas las productos.
+==== Ejemplo de petición
+include::{snippets}/producto/get-productos/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/producto/get-productos/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/producto/get-productos/curl-request.adoc[]
+=== POST nuevo producto
+Crea un nuevo producto
+==== Ejemplo de petición
+include::{snippets}/producto/post-producto/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/producto/post-producto/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/producto/post-producto/curl-request.adoc[]
+=== PUT  producto
+Actualiza un etapa existente.
+==== Ejemplo de petición
+include::{snippets}/producto/put-producto/http-request.adoc[]
+==== Parámetros de la petición
+include::{snippets}/producto/put-producto/path-parameters.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/producto/put-producto/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/producto/put-producto/curl-request.adoc[]
+=== DELETE producto por Id
+Elimina una etapa específica usando su identificador único.
+==== Ejemplo de petición
+include::{snippets}/producto/delete-producto/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/producto/delete-producto/http-response.adoc[]
+==== Parámetros de la petición
+include::{snippets}/producto/delete-producto/path-parameters.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/producto/delete-producto/curl-request.adoc[]
+[[ventas]]
+== Ventas
+=== Get producto por Id
+Obtiene una venta específica usando su identificador único.
+==== Ejemplo de petición
+include::{snippets}/venta/get-venta/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/venta/get-venta/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/venta/get-venta/curl-request.adoc[]
+==== Parámetros de la petición
+include::{snippets}/venta/get-venta/path-parameters.adoc[]
+=== Get ventas
+Obtiene todas las ventas.
+==== Ejemplo de petición
+include::{snippets}/venta/get-ventas/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/venta/get-ventas/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/venta/get-ventas/curl-request.adoc[]
+=== POST nueva venta
+Crea una nueva venta
+==== Ejemplo de petición
+include::{snippets}/venta/post-venta/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/venta/post-venta/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/venta/post-venta/curl-request.adoc[]
+=== PUT  venta
+Actualiza un etapa existente.
+==== Ejemplo de petición
+include::{snippets}/venta/put-venta/http-request.adoc[]
+==== Parámetros de la petición
+include::{snippets}/venta/put-venta/path-parameters.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/venta/put-venta/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/venta/put-venta/curl-request.adoc[]
+=== DELETE venta por Id
+Elimina una etapa específica usando su identificador único.
+==== Ejemplo de petición
+include::{snippets}/venta/delete-venta/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/venta/delete-venta/http-response.adoc[]
+==== Parámetros de la petición
+include::{snippets}/venta/delete-venta/path-parameters.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/venta/delete-venta/curl-request.adoc[]
+[[visitas]]
+== Visitas
+=== Get visita por Id
+Obtiene una visita específica usando su identificador único.
+==== Ejemplo de petición
+include::{snippets}/visita/get-visita/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/visita/get-visita/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/visita/get-visita/curl-request.adoc[]
+==== Parámetros de la petición
+include::{snippets}/visita/get-visita/path-parameters.adoc[]
+=== Get visitas
+Obtiene todas las visitas.
+==== Ejemplo de petición
+include::{snippets}/visita/get-visitas/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/visita/get-visitas/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/visita/get-visitas/curl-request.adoc[]
+=== POST nueva visita
+Crea una nueva visita
+==== Ejemplo de petición
+include::{snippets}/visita/post-visita/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/visita/post-visita/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/visita/post-visita/curl-request.adoc[]
+=== PUT  visita
+Actualiza un etapa existente.
+==== Ejemplo de petición
+include::{snippets}/visita/put-visita/http-request.adoc[]
+==== Parámetros de la petición
+include::{snippets}/visita/put-visita/path-parameters.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/visita/put-visita/http-response.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/visita/put-visita/curl-request.adoc[]
+=== DELETE visita por Id
+Elimina una etapa específica usando su identificador único.
+==== Ejemplo de petición
+include::{snippets}/visita/delete-visita/http-request.adoc[]
+==== Ejemplo de respuesta
+include::{snippets}/visita/delete-visita/http-response.adoc[]
+==== Parámetros de la petición
+include::{snippets}/visita/delete-visita/path-parameters.adoc[]
+==== Ejemplo usando CURL
+include::{snippets}/visita/delete-visita/curl-request.adoc[]

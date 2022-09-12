@@ -23,7 +23,7 @@ public class ClienteService {
                 repository.save(mapper.clienteToClienteEntity(cliente)));
     }
     
-    public Optional<Cliente> obtenCliente(long clienteId) {
+    public Optional<Cliente> obtenCliente(Long clienteId) {
         return repository.findById(clienteId)
                 .map(cliente -> Optional.of(mapper.clienteEntityToCliente(cliente)))
                 .orElse(Optional.empty());
@@ -37,16 +37,17 @@ public class ClienteService {
                 .collect(Collectors.toList());
     }
 
-
-    public void eliminaCliente(long clienteId){
-        repository.deleteById(clienteId);
-    }
-
     public Cliente actualizaCliente(Cliente cliente){
         return mapper.clienteEntityToCliente(
                 repository.save(mapper.clienteToClienteEntity(cliente))
         );
     }
+    
+    public void eliminaCliente(Long clienteId){
+        repository.deleteById(clienteId);
+    }
+
+    
 
     public long cuenteClientes(){
         return repository.count();

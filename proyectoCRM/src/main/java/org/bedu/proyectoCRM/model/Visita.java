@@ -1,23 +1,28 @@
 package org.bedu.proyectoCRM.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.validation.constraints.*;
+
+import org.bedu.proyectoCRM.persistence.entities.ClienteEntity;
+
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class Visita {
     @PositiveOrZero(message = "El identificador de la visita no puede ser un número negativo.")
-    private long id;
+    private Long id;
 
     @NotNull(message = "La visita debe haberse realizado a algún cliente.")
-    private Cliente cliente;
+    private ClienteEntity cliente;
 
-    @Future(message = "La fecha de la cita no puede ser en una fecha en el pasado.")
+    @NotNull(message = "La fecha de la cita no puede ser en una fecha en el pasado.")
     private LocalDateTime fechaProgramada;
 
     @NotEmpty(message = "La dirección no puede estar en blanco.")

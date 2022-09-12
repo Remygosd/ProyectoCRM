@@ -16,7 +16,7 @@ import javax.validation.constraints.*;
 public class Cliente {
     
     @PositiveOrZero
-    private long id;
+    private Long id;
 
     @NotEmpty
     @Size(min = 3, max = 30)

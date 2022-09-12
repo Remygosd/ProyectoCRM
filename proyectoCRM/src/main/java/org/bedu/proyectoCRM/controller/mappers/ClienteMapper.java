@@ -1,7 +1,7 @@
 package org.bedu.proyectoCRM.controller.mappers;
 
 import org.bedu.proyectoCRM.model.Cliente;
-import org.bedu.proyectoCRM.persistence.entity.ClienteEntity;
+import org.bedu.proyectoCRM.persistence.entities.ClienteEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
 
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,21 +25,17 @@ public class ClienteController {
     private final ClienteService clienteService;
     
     @GetMapping("/{clienteId}")
-    public ResponseEntity<Cliente> getCliente(@PathVariable long clienteId){
+    public ResponseEntity<Cliente> getCliente(@PathVariable Long clienteId){
           
         Optional<Cliente> cliente = clienteService.obtenCliente(clienteId);
-        /*Cliente cliente = new Cliente();
-        cliente.setId(clienteId);
-        cliente.setNombre("Cliente");
-        
-        return ResponseEntity.ok(cliente);*/
 
         return  ResponseEntity.ok(cliente.get());
     } 
 
     @GetMapping
-    public ResponseEntity <List<Cliente>> getCliente(){
-        return  ResponseEntity.ok(new ArrayList<>());
+    public ResponseEntity <List<Cliente>> getClientes(){
+
+        return  ResponseEntity.ok(clienteService.obtenClientes());
     }
 
     @PostMapping
@@ -50,8 +45,8 @@ public class ClienteController {
     }
 
     @PutMapping("/{clienteId}")
-    public ResponseEntity<Void> actualizaCliente( @PathVariable Long ClienteId, @Valid @RequestBody Cliente clienteId){
-        clienteService.actualizaCliente(clienteId);
+    public ResponseEntity<Void> actualizaCliente( @RequestBody @Valid Cliente cliente) {
+        clienteService.actualizaCliente(cliente);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
